@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>闭包的this和变量</title>
+</head>
+<body>
+	<script type="text/javascript">
+//		function creatFunctions(){
+//			var result = new Array();
+//			for(var i=0;i<10;i++){
+//				result[i] = function(){
+//					return i
+//				}
+//			}
+//			return result
+//		}
+//		console.log (creatFunctions()[1]());
+//		function creatFunctions(){
+//			var result = new Array();
+//			for(var i=0;i<10;i++){
+//				result[i] = function(num){
+//					return function(){
+//						return num
+//					}
+//				}(i)//匿名函数传参
+//			}
+//			return result
+//		}
+//		console.log (creatFunctions()[1]());//console.log=>creatFunctions()[1]就是return后面的function
+
+//		var name = 'the window';
+//		var obj = {
+//			name:'my obj',
+//			getNameFunc:function(){
+//				return function(){
+//					return this.name;
+//				}
+//			}
+//		}
+//		alert(obj.getNameFunc()())
+		
+//		var name = 'the window';
+//		var obj = {
+//			name:'my obj',
+//			getNameFunc:function(){
+//				var that = this;
+//				return function(){
+//					return that.name;
+//				}
+//			}
+//		}
+//		alert(obj.getNameFunc()())
+		
+		var name = 'the window';
+		var obj = {
+			name:'my obj',
+			getName:function(){
+				return this.name;
+			}
+		}
+		console.log(obj.getName());
+		console.log((obj.getName)());
+		console.log((obj.getName = obj.getName)());
+	</script>
+</body>
+</html>
